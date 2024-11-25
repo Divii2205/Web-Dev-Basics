@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyFrames</title>
+    
+    <style>
+
+        .container{
+            padding: 30px;
+        }
+
+        .box{
+            display: flex;
+            height: 100px;
+            width: 100px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(56, 239, 205);
+            animation-name: box-animation;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            /* animation-fill-mode: forwards; */
+        }
+
+        @keyframes box-animation{
+            0%{
+                background-color: rgb(127, 232, 255);
+            }
+            25%{
+                background-color: rgb(80, 255, 141);
+                transform: translate(100px, 200px);
+            }
+            50%{
+                background-color: blueviolet;
+                border-radius: 50%;
+                transform: translate(100px, 100px);
+            }
+            75%{
+                background-color: rgb(220, 113, 20);
+                transform: translate(100px, 100px);
+            }
+            100%{
+                background-color: rgb(220, 20, 130);
+                transform: translate(200px, 20px);
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box">Animate!</div>
+    </div>
+</body>
+</html>

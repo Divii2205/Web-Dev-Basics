@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF - 8" />
+    <meta
+      name="viewport"
+      content="width = device - width, initial - scale = 1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn-1">Say Hello</button>
+    <!-- <p id="hello"> </p> -->
+
+    <script>
+        // On click of a button add hello
+
+        // Query selector
+
+        let btnEl = document.querySelector('#btn-1'); // query selector can be replaced with getElementById
+        // let paraEl = document.querySelector('#hello')
+
+        // event Listeners
+
+        btnEl.addEventListener('click', function(){
+            // paraEl.textContent += "Hello\n"
+            let newDiv = document.createElement('div')
+            newDiv.innerText = 'Hello'
+
+            let bodyEl = document.querySelector('body')
+            bodyEl.appendChild (newDiv)
+        })
+
+
+    </script>
+  </body>
+</html>

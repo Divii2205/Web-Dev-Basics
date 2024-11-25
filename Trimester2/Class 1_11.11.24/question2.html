@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF - 8" />
+    <meta
+      name="viewport"
+      content="width = device - width, initial - scale = 1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+    </ul>
+
+    <button id="btn-1">Fix</button>
+
+    <script>
+      // Fix the list by inserting the missing element using querySelectorAll and insertBefore
+      let btnEl = document.querySelector('#btn-1')
+      btnEl.addEventListener('click', function(){
+        let all = document.querySelectorAll('li')
+        let eight = all[6]
+
+        let seven = document.createElement('li')
+        seven.innerText = 7
+
+        let list = document.querySelector('ul')
+        list.insertBefore(seven, eight)
+        // insertBefore takes input as -- element to be inserted, insert before index value
+      })
+      
+    </script>
+  </body>
+</html>

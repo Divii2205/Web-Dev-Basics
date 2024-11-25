@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+  </head>
+
+  <style>
+    div {
+      min-height: 100px;
+      min-width: 100px;
+      padding: 20px;
+      border: 2px solid black;
+    }
+
+    .test {
+      height: 100px;
+      width: 100px;
+      background-color: red;
+    }
+  </style>
+  <body>
+    <div class="grandParent">
+      <div class="parent">
+        <div class="child"></div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+
+    // let child = document.querySelector('.child');
+    // let parent = document.querySelector('.parent');
+    // let grandParent = document.querySelector('.grandParent');
+
+    // child.addEventListener('click', function(e){
+    //     console.log('Child element');
+    //     // e.stopPropagation();
+    // }, true) 
+    
+    // // true => captures the topmost element having true (capturing enabled)
+    // // there is no use of enabling capturing for the child element
+    // // syntax: either mention just true else {capture: true}
+
+    // parent.addEventListener('click', function(e){
+    //     console.log('Parent element');
+    //     // e.stopPropagation();
+    // })
+
+    // grandParent.addEventListener('click', function(e){
+    //     console.log('GrandParent element');
+    //     // e.stopPropagation();
+    // })
+
+    // more optimised using "event delegation" --> distributing the eventListener to different elements
+    let grandParent = document.querySelector('.grandParent')
+
+    grandParent.addEventListener('click', function(e){
+        console.log(e);        
+        if (e.target.classList.contains('child')) console.log('Child');
+        if (e.target.classList.contains('parent')) console.log('Parent');
+        if (e.target.classList.contains('grandParent')) console.log('GrandParent');                
+    })
+
+  </script>
+</html>

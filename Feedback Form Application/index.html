@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form Application</title>
+    <link rel="stylesheet" href="styles.css">   
+</head>
+<body>
+    <div class="Event">
+        <h2 style="text-align:center"> Event List</h2>
+        <section class="Event List">
+            <section class="September">
+                <ul type="circle">
+                    <li><h3>September</h3></li>
+                    <ol>
+                        <li> <b>05th</b> - Teacher's Day</li>
+                        <li> <b>07th</b> - Ganesh Chaturthi</li>
+                        <li> <b>15th</b> - Engineer's Day</li>
+                        <li> <b>15th</b> - Onam</li>
+                        <li> <b>27th</b> - Google Birth Anniversary</li>
+                    </ol>
+                </ul> 
+            </section>
+
+            <section class="October">
+                <ul>
+                    <li><h3>October</h3></li>
+                    <ol>
+                        <li type="a"> <b>02nd</b> - Gandhi Jayanthi</li>
+                        <li type="a"> <b>03rd</b> - Navratri</li>
+                        <li type="a"> <b>08th</b> - Indian Air Force Day</li>
+                        <li type="a"> <b>09th</b> - Durga Puja</li>
+                        <li type="a"> <b>31st</b> - Halloween</li>
+                    </ol>
+                </ul> 
+            </section>
+        </section>
+    </div>
+
+    <div>
+        <table border cellspacing="" cellpadding="10" style="width: 100%">
+            <thead>
+                <th>No.</th>
+                <th>Date</th>
+                <th>Event</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1.</td>
+                    <td> 05</td>
+                    <td> Teacher's Day</td>
+                </tr>
+                <tr>
+                    <td> 2.</td>
+                    <td> 07</td>
+                    <td> Ganesh Chaturthi</td>
+                </tr>
+                <tr>
+                    <td> 3.</td>
+                    <td rowspan="2"> 15</td>
+                    <td> Engineer's Day</td>
+                </tr>
+                <tr>
+                    <td> 4.</td>
+                    <td> Onam</td>
+                </tr>
+                <tr>
+                    <td> 5.</td>
+                    <td> 27</td>
+                    <td> Google Birth Anniversary</td>
+                </tr>
+            </tbody>
+            <caption>Events in September</caption>
+        </table>
+    </div>
+
+    <div>
+        <form>
+            <h2>Feedback</h2>
+
+            <input placeholder="Username" type="text" required autofocus><br>
+
+            <input placeholder="Password" type="password" required><br>
+
+            <input placeholder="PhoneNo" type="number" max="10" required><br>
+
+            <input placeholder="Email" type="email" required><br><br>
+
+            <label>Gender</label>
+            <select>
+                <option selected="selected">--select--</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Others</option>
+            </select><br><br>
+
+            <label>Upload a picture</label><br>
+            <input type="file"><br>
+
+            <label>Rate your mood </label><br>
+            <label> Worst</label>
+            <input name="mood" type="radio"><label>1</label>
+            <input name="mood" type="radio"><label>2</label>
+            <input name="mood" type="radio"><label>3</label>
+            <input name="mood" type="radio"><label>4</label>
+            <input name="mood" type="radio"><label>5</label>
+            <label> Best</label><br><br>
+
+            <label>Select month(s)</label><br>
+            <input type="checkbox"><label>September</label><br>
+            <input type="checkbox"><label>October</label><br><br>
+
+            <label>Any Suggestions?</label><br>
+            <textarea rows="3" cols="50">Type your message here</textarea><br><br>
+            <input type="submit" value="Submit ^--^"><br><br>
+        </form>
+    </div>
+
+    <figure>
+        <a href="https://en.wikipedia.org/wiki/Loading" target="_blank">
+            <img src="../LoadMe!/LoadPNG.png" alt="loading">
+        </a>
+        <figcaption>Loading PNG image</figcaption>
+    </figure>
+</body>
+</html>

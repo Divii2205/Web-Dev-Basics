@@ -1,0 +1,27 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: antiquewhite;
+    padding: 15px;
+    margin:100px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.Event{
+    background-color: rgb(172, 214, 214);
+    padding:10px;
+    border-radius: 10px;
+}
+
+.Event .List{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+.September{
+    display:flex;
+    flex-grow: 10;
+}

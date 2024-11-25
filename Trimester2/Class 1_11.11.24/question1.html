@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF - 8" />
+    <meta
+      name="viewport"
+      content="width = device - width, initial - scale = 1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn-1">Say Hello</button>
+    <!-- <p id = "hello"></p> -->
+
+    <script>
+        
+        let btnEl = document.querySelector('#btn-1');
+        // querySelector can be replaced by getElementById or getElementByClass
+        
+        // eventListner takes 'event' and the resulting 'function' as an input
+        btnEl.addEventListener('click', function(){
+            let para = document.createElement('p')
+            para.innerText = 'Hello'
+            // innerText can be replaced by textContent
+
+            let bodyEl = document.querySelector('body')
+            bodyEl.appendChild(para)
+            
+            // let pEl = document.getElementById('hello')
+            // /*1.*/ pEl.textContent += 'Hello '
+            // /*2.*/ pEl.innerText += 'Hello '
+            // // 1. and 2. both show different results
+        })
+    
+       
+    </script>
+  </body>
+</html>

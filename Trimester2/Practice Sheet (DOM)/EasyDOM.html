@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Sheet - EasyDOM Questions</title>
+
+    <!-- Question 8 -->
+    <!-- <style>
+        .highlight{
+            background-color: lightblue;
+        }
+    </style> -->
+
+</head>
+<body>
+    <!-- 1.Change Background Color -->
+    <!-- <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        const li = document.querySelectorAll('li');
+        li.forEach(el => {
+            el.style.backgroundColor = 'lightblue';
+        });
+    </script> -->
+
+    <!-- 2. Add New Element -->
+    <!-- <script>
+        const body = document.querySelector('body');
+        const para = document.createElement('p');
+        para.textContent = "This is a new Paragraph";
+        body.appendChild(para);
+    </script> -->
+
+    <!-- 3. Modify Styles -->
+    <!-- <h1>My paragraph</h1>
+    <h1> Hello! </h1>
+    <script>
+        const head = document.querySelector('h1');
+        head.style.fontSize =  '36px';
+    </script> -->
+
+    <!-- 4. Change Image Source -->
+    <!-- <img id="profile-pic" src="https://via.placeholder.com/300" alt="Profile Picture">
+    <script>
+        const image = document.querySelector('#profile-pic');
+        image.src = 'https://via.placeholder.com/150';
+    </script> -->
+
+    <!-- 5. Change Text Color -->
+    <!-- <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <script>
+        const para = document.querySelectorAll('p');
+        para.forEach(p => {
+            p.style.color='#FF5733';
+        })
+    </script> -->
+
+    <!-- 6. Event Listener -->
+    <!-- <button id="click-me">Click Me</button>
+    <p></p>
+    <script>
+        const text = document.querySelector('p');
+        const btn = document.querySelector('#click-me');
+        btn.addEventListener('click', function(){
+            text.textContent = 'Button Clicked!';
+        })
+    </script> -->
+
+    <!-- 7. Form Input Value -->
+    <!-- <input type="text" id="user-name" placeholder="Enter your name">
+    <p></p>
+    <script>
+        const input = document.querySelector('#user-name');
+        const para = document.querySelector('p');
+        input.addEventListener('input', function(){
+            para.textContent = input.value;
+        })
+    </script> -->
+
+    <!-- 8. Toggle Class -->
+    <!-- <div class="box">Box Content</div>
+    <button id="toggle-btn">Toggle Highlight</button>
+    <script>
+        const btn = document.querySelector('#toggle-btn');
+        const box = document.querySelector('.box');
+        btn.addEventListener('click', function(){
+            box.classList.toggle('highlight');
+        })
+    </script> -->
+
+    <!-- 9. Remove Element -->
+    <!-- <div id="delete-me">Remove Me</div>
+    <script>
+        const remove = document.querySelector('#delete-me');
+        remove.remove();
+    </script> -->
+
+    <!-- 10. Selecting Elements -->
+    <div id="header-title"></div>
+    <script>
+        const text = document.querySelector('#header-title');
+        text.textContent = "Welcome to DOM Practice!"
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Sheet - MediumDOM Questions</title>
+
+    <!-- Question4 -->
+    <!-- <style>
+        .hidden{
+            display: none;
+        }
+    </style> -->
+    
+</head>
+<body>
+    <!-- 1. Create a List -->
+    <!-- <div id="list-container"></div>
+    <script>
+
+        // const div = document.querySelector("#list-container");
+        // const ul = document.createElement('ul');
+
+        // for (let i = 1; i<=5; i++){
+        //     const li = document.createElement('li');
+        //     li.textContent = `Item ${i}`;
+
+        //     ul.appendChild(li);
+        // }
+        // div.appendChild(ul);
+        // console.log(div);
+    </script> -->
+
+    <!-- 2. Update Multiple Elements -->
+    <!-- <div>
+        <p class="update-text">Text 1</p>
+        <p class="update-text">Text 2</p>
+        <p class="update-text">Text 3</p>
+    </div>
+    <script>
+        function update(select){
+            select.textContent = "Updated Successfully!";
+        }
+        const updateText = document.querySelectorAll('.update-text');
+        for(let i = 0; i<updateText.length; i++){
+            let select = updateText[i];
+            update(select);
+        }
+    </script> -->
+
+    <!-- 3. Event Delegation -->
+    <!-- <ul id="parent-list">
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ul>
+    <script>
+        const ul = document.querySelector("#parent-list");
+        ul.addEventListener('click', function(e){
+            if (e.target.tagName === 'LI') console.log(`List Item $ Clicked!`);            
+        })
+    </script> -->
+
+    <!-- 4. Show/Hide Element -->
+    <!-- <div id="popup-box">This is a popup box</div>
+    <button id="close-popup">Close Popup</button>
+    <script>
+        const btn = document.querySelector('#close-popup');
+        const div = document.querySelector('#popup-box');
+        btn.addEventListener('click', function(){
+            div.classList.toggle('hidden');
+        })
+    </script> -->
+
+    <!-- 5. Dynamic Tabel Creation -->
+    <!-- <div id="table-container"></div>
+    <script>
+        const div = document.querySelector('#table-container');
+        const table = document.createElement('table');
+        for (let i = 0; i<3; i++){
+            const row = document.createElement('tr');
+            for (let j = 0; j<3; j++){
+                const col = document.createElement('td');
+                col.textContent = "Divii"
+                row.appendChild(col);
+            }
+            table.appendChild(row);
+        }
+        div.appendChild(table);
+    </script> -->
+
+    <!-- 6. Disable Button -->
+    <!-- <button id="submit-btn">Submit</button>
+    <script>
+        const btn = document.querySelector("#submit-btn");
+        btn.addEventListener('click', function(){
+            btn.disabled = true;
+        })
+    </script> -->
+
+    <!-- 7. Text Input Event -->
+    <!-- <input type="text" id="title-input" placeholder="Type something">
+    <h2 id="dynamic-title">Dynamic Title</h2>
+    <script>
+        const text = document.querySelector("#dynamic-title");
+        const enter = document.querySelector("#title-input");
+        enter.addEventListener('input', function(){
+            text.textContent = enter.value;
+        })
+    </script> -->
+
+    <!-- 8. Remove All Children -->
+    <!-- <div id="content-area">
+        <p>Child 1</p>
+        <p>Child 2</p>
+        <p>Child 3</p>
+    </div>
+    <script>
+        const div = document.querySelector("#content-area");
+        while(div.firstChild){
+            div.removeChild(div.firstChild);
+        }
+    </script> -->
+
+    <!-- 9. Dynamic Countdown -->
+    <!-- <div id="countdown">10</div>
+    <script>
+        let count = document.querySelector("#countdown");
+        let time = count.textContent;
+        
+        setInterval(() => {
+            time--;
+            if (time>=0){
+                count.textContent=time
+            }
+        }, 1000);
+    </script> -->
+
+    <!-- 10. Add Class to Multiple Elements -->
+    <div class="error-container">
+        <p>Message 1</p>
+        <p>Message 2</p>
+        <p>Message 3</p>
+    </div>
+    <script>
+        const div = document.querySelectorAll('.error-container p');
+        div.forEach(el => {
+            el.classList.add('error-message');
+        })
+        console.log(div);
+    </script>
+
+</body>
+</html>

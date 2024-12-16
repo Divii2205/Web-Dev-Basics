@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-step Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Multi-step Form</h1>
+
+    <form id="multi-step-form">
+        <div class="form-step active" id="step-1">
+            <h3>Step 1</h3>
+            <input type="text" id="name" placeholder="Your Name">
+            <button type="button" id="next-1">Next</button>
+        </div>
+
+        <div class="form-step" id="step-2">
+            <h3>Step 2</h3>
+            <input type="email" id="email" placeholder="Your Email">
+            <button type="button" id="next-2">Next</button>
+        </div>
+
+        <div class="form-step" id="step-3">
+            <h3>Step 3</h3>
+            <input type="password" id="password" placeholder="Your Password">
+            <button type="submit" id ="next-3">Submit</button>
+        </div>
+        <div class="submitted"></div>
+    </form>
+
+    <script>
+        const step1 = document.querySelector('#step-1');
+        const step2 = document.querySelector('#step-2');
+        const step3 = document.querySelector('#step-3');
+
+        const next1 = document.querySelector('#next-1');
+        const next2 = document.querySelector('#next-2');
+        const next3 = document.querySelector('#next-3');
+
+        const submit = document.querySelector('.submitted');
+
+        next1.addEventListener('click', function(){
+            step1.className = 'form-step';
+            step2.className = 'form-step active';
+        })
+
+        next2.addEventListener('click', function(){
+            step2.className = 'form-step';
+            step3.className = 'form-step active';
+        })
+
+        next3.addEventListener('click', function(e){
+            e.preventDefault();
+            step3.className = 'form-step';
+            submit.textContent = 'SUBMITTED!'
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        button{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form id="registration-form">
+        <input type="text" id="username" placeholder="Username">
+        <div id="username-error" class="error"></div>
+
+        <input type="email" id="email" placeholder="Email">
+        <div id="email-error" class="error"></div>
+
+        <input type="password" id="password" placeholder="Password">
+        <div id="password-error" class="error"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        const form = document.querySelector('form');
+        
+        const username = document.querySelector('#username');
+        const email = document.querySelector('#email');
+        const password = document.querySelector('#password');
+
+        const usernameErr = document.querySelector('#username-error');
+        const emailErr = document.querySelector('#email-error');
+        const passwordErr = document.querySelector('#password-error');
+
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            if(username.value.trim() === "") usernameErr.textContent = "Enter Username!";
+            if(email.value.trim() === "") emailErr.textContent = "Enter Email!";
+            if(password.value.trim() === "") passwordErr.textContent = "Enter Password!";
+        })
+    </script>
+</body>
+</html>

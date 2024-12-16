@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        #color-box {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            background-color: #ccc;
+            /* background-color: #bd3939; */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Random Background Color</h1>
+
+    <div id="color-box"></div>
+
+    <script>
+        const color = document.querySelector("#color-box");
+        const hex = '0123456789ABCDEFG';
+        
+        function change(){
+            let value = '#';
+            for (let i = 0; i<6; i++){
+                let index = Math.floor(Math.random()*hex.length);
+                value += hex[index];
+            }
+            color.style.backgroundColor=value;
+        }
+
+        setInterval(change, 400);
+    </script>
+</body>
+</html>

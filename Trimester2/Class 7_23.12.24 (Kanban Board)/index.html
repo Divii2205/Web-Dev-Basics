@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanaban Board Class</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/589957875e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+       <!-- Toolbox (Navbar) -->
+    <div class="toolbox-cont">
+        <div class="search">
+            <div class="search-btn">
+                <i class="fa-solid fa-search"></i>
+            </div>
+            <div class="search-text-cont">
+                <textarea class="search-text" placeholder="Search your task"></textarea>
+            </div>
+        </div>
+
+        <div class="toolbox-priority-cont">
+            <div class="lightblue color"></div>
+            <div class="lightpink color"></div>
+            <div class="lightpurple color"></div>
+            <div class="lightgreen color"></div>
+        </div>
+
+
+        <div class="action-btn-cont">
+
+            <div class="add-btn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+           <div class="remove-btn">
+            <i class="fa-solid fa-eraser"></i>
+           </div>
+
+           <div class="trash-btn">
+            <i class="fa-solid fa-trash"></i>
+           </div>
+
+           <div class="sort-btn">
+            <i class="fa-solid fa-sort"></i>
+           </div>
+
+           <div class="download-btn">
+            <i class="fa-solid fa-download"></i>
+           </div>
+
+           <div class="info-btn">
+            <i class="fa-solid fa-circle-info"></i>
+           </div>
+        </div>
+    </div>
+
+
+    <!-- Task Ticket -->
+    <div class="parent">
+        <div class="main-cont">
+            <div class="ticket-cont">
+                <div class="ticket-color"></div>
+                <div class="ticket-id">12345</div>
+                <div class="task-area" contenteditable="false">Random Task</div>
+                <div class="ticket-lock">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+            </div>    
+        </div>
+            
+        <div class="modal-cont">
+            <textarea class="textArea-cont" placeholder="Enter Your Task"></textarea>
+    
+            <div class="priority-colors-container">
+                <div class="lightpink priority-color"></div>
+                <div class="lightgreen priority-color"></div>
+                <div class="lightblue priority-color"></div>
+                <div class="lightpurple priority-color active"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal Task Area -->
+
+
+
+    <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+</html>

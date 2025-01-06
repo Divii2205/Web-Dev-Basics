@@ -65,27 +65,23 @@ body{
     transition: all 0.25s ease;
 }
 
-.color:hover{
-
-}
-
 .lightpink{
-    background-color: lightpink;
+    background-color: lightpink !important;
     cursor: pointer;
 }
 
 .lightgreen{
-    background-color: lightgreen;
+    background-color: lightgreen !important;
     cursor: pointer;
 }
 
 .lightblue{
-    background-color: lightskyblue;
+    background-color: lightskyblue !important;
     cursor: pointer;
 }
 
 .lightpurple{
-    background-color: rgb(217, 159, 249);
+    background-color: rgb(217, 159, 249) !important;
     cursor: pointer;
 }
 
@@ -141,7 +137,7 @@ body{
 .ticket-color{
     width: 15rem;
     height: 20px;
-    background-color: rgb(217, 159, 249);
+    background-color: rgb(221, 221, 221);
     border-radius: 10px 10px 0px 0px;
 }
 
@@ -179,7 +175,7 @@ body{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     position: absolute;
     top: 30%;
-    display: flex;
+    display: none;
 }
 
 .textArea-cont{
@@ -188,7 +184,7 @@ body{
     width: 80%;
     box-sizing: border-box;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
     padding: 10px;
     resize: none;
     outline: none;
@@ -211,7 +207,11 @@ body{
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: all 0.15s ease;
+}
+
+.active{
+    border: solid red 2px;
 }
 
 .priority-color:hover, .color:hover, .action-btn-cont>*:hover{

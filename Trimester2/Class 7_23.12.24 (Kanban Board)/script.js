@@ -25,6 +25,7 @@ function createTicket(taskColor, task, id){
     mainCont.appendChild(ticketCont);  
     handleRemoval(ticketCont);  
     changeTaskColor(ticketCont, taskColor);
+    toggleLock(ticketCont);
 }
 
 // Get data of the task and add to task ticket
@@ -110,3 +111,21 @@ function changeTaskColor(ticketCont, taskColor){
     })
 }
 
+// Toggling the lock icon on ticket
+let lockOpen = false;
+
+function toggleLock(ticketCont){
+    let ticketLock = document.querySelector('.ticket-lock');
+    let ticketTaskArea = ticketCont.querySelector('.task-area');
+
+    ticketLock.addEventListener('click', function(){
+        lockOpen = !lockOpen;   
+        if(lockOpen){
+            ticketLock.innerHTML = `<i class="fa-solid fa-lock-open"></i>`;
+            ticketTaskArea.setAttribute('contenteditable', 'true');
+        } else {
+            ticketLock.innerHTML = `<i class="fa-solid fa-lock"></i>`;
+            ticketTaskArea.setAttribute('contenteditable', 'false');
+        }
+    })
+}

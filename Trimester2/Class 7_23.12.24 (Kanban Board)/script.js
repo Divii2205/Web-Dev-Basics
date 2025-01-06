@@ -115,7 +115,7 @@ function changeTaskColor(ticketCont, taskColor){
 let lockOpen = false;
 
 function toggleLock(ticketCont){
-    let ticketLock = document.querySelector('.ticket-lock');
+    let ticketLock = ticketCont.querySelector('.ticket-lock');
     let ticketTaskArea = ticketCont.querySelector('.task-area');
 
     ticketLock.addEventListener('click', function(){
@@ -129,3 +129,13 @@ function toggleLock(ticketCont){
         }
     })
 }
+
+// Deleting all tickets
+let removeAllBtn = document.querySelector('.remove-all-btn');
+
+removeAllBtn.addEventListener('click', () => {
+    let confirmation = prompt("Are you sure you want to delete all tickets? (Y/N)");
+    if(confirmation.trim().toLowerCase() === 'y' ){
+        mainCont.innerHTML = "";
+    }
+})

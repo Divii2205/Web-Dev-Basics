@@ -3,6 +3,7 @@ let addBtn = document.querySelector(".add-btn");
 let modalCont = document.querySelector(".modal-cont");
 let textAreaCont = document.querySelector(".textArea-cont");
 
+let ticketsArr = [];
 // Modal popup open and close
 let addBtnFlag = false;
 addBtn.addEventListener('click', () => {
@@ -26,6 +27,8 @@ function createTicket(taskColor, task, id){
     handleRemoval(ticketCont);  
     changeTaskColor(ticketCont, taskColor);
     toggleLock(ticketCont);
+
+    ticketsArr.push({ticketId: id, colorOfTicket: taskColor, ticketTask: task});
 }
 
 // Get data of the task and add to task ticket
@@ -106,7 +109,7 @@ function changeTaskColor(ticketCont, taskColor){
 
     colorDiv.addEventListener('click', () => {        
         index++;
-        if (index == colorArr.length) index = 0;
+        index = index % colorArr.length;
         colorDiv.classList.replace(colorDiv.classList[1], colorArr[index]);        
     })
 }
@@ -138,4 +141,28 @@ removeAllBtn.addEventListener('click', () => {
     if(confirmation.trim().toLowerCase() === 'y' ){
         mainCont.innerHTML = "";
     }
+})
+
+// Activating the toolBox Colors
+let toolboxColors = document.querySelectorAll('.color');
+let clickCount = Array.from({length: colorArr.length}, () => 0);
+
+
+toolboxColors.forEach(toolboxColor => {     
+    toolboxColor.addEventListener('click', () => {
+        let toolBoxColorSelected = toolboxColor.classList[0];
+        let clickIndex = colorArr.indexOf(toolBoxColorSelected);
+        let clickIndexValue = clickCount[clickIndex];
+        
+        let allTickets = document.querySelectorAll('.ticket-cont');
+        allTickets.forEach(ticket => {
+            let ticketColor = ticket.querySelector('.ticket-color');
+            if(clickIndexValue%2 === 1) ticket.style.display = "block";
+            else {
+                if(ticketColor.classList[1] === toolBoxColorSelected) ticket.style.display = "block";
+                else ticket.style.display = "none";
+            }          
+        })
+        clickCount[clickIndex]++;
+    })
 })

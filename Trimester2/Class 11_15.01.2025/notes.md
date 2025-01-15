@@ -19,5 +19,5 @@ Handles non-blocking asynchronous requests made by the call backs.
 ## Error first callbacks:
 Callbacks that handle the error first and the data next, for example: the callback used in the readFile asynchronous method
 
-Asynchronous: not 
-Synchronous: not concurrent 
+Asynchronous: not concurrent
+Synchronous: not serial

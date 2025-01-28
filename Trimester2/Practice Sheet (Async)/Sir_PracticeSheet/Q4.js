@@ -1,6 +1,6 @@
 function fetchUser() {
     return new Promise(resolve => {
-        setTimeout(() => resolve({ name: "Alice" }), 1000);
+        setTimeout(() => resolve({ name: "Alice" }), 2000);
     });
 }
 
@@ -12,3 +12,6 @@ async function getUser(){
 }
 
 getUser()
+console.log("Hii");
+
+// Since the getuser function is made synchronous by using await, shoulnd't "hii" be printed after the function executes??

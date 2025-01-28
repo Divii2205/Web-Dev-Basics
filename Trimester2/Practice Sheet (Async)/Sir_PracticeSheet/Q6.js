@@ -1,6 +1,6 @@
 const myPromise1 = new Promise((resolve, reject) => {
-    setTimeout(resolve, 200, "King");
-  });
+  setTimeout(resolve, 200, "King");
+});
 
 const myPromise2 = new Promise((resolve, reject) => {
 setTimeout(resolve, 100, "Queen");

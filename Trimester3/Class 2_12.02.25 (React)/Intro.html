@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div class="root"></div>
+    <script>
+        // Write a JS script to append a "Hello World" text in the root div
+        // const heading = document.createElement('div');
+        // heading.innerHTML = `<h1> Hello From JS </h1>`;
+        // const body = document.querySelector('body');
+        // body.appendChild(heading);
+
+        // ------- //
+
+        // Using react to perform the same action
+
+        // (type, props, children)
+        // type: type of element
+        // props (properties): you can add attributes or properties to the element => in "object format"
+        // children: what goes in the element
+
+        // React: Used to create elements and components
+        // ReactDOM: Converts react commands into browser readable format => HTML
+        // ReactNative: Mobile framework => Mobile phones do not have DOM unless a browser is opened
+        
+        let heading = React.createElement('h1', {
+            class:"heading1", 
+            style:{
+                fontSize: '3rem',
+                backgroundColor: 'orange',
+                color: 'rgb(83, 3, 170)'
+            }}, "Hello from React");
+        console.log(heading); /* returns an object */
+        
+        // .render(element, container, callback)
+        // element: the element that needs to be appended => the functional component
+        // container: element is appended to this container
+        // callback: optional
+        // rendering: process where the react components are coverted to HTML format for the UI to be displayed on the screen
+        ReactDOM.render(heading, document.querySelector('.root'))
+        
+        // JSX => JavaScript XML (Extensible Markup Language) => helps use HTML and JavaScript together
+        // Allows user to write HTML like code using JavaScript
+        // NOTE: use a function whenver you are writing JSX
+
+        // This is a react component
+        // function App(){
+        //     return <h1> New Halo </h1>;
+        //     // return React.createElement('h1', null, 'New Halo');
+        // }
+
+        // extra layer => babel (transpiles JSX to HTML code) => javascript compiler 
+        // ReactDOM.render(<App/>, document.querySelector('.root')) /* does not work until babel is used => refer to babel.html file*/
+    
+    </script>    
+</body>
+</html>

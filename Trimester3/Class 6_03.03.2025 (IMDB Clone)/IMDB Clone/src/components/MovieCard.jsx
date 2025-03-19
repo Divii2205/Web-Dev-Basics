@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 
-function MovieCard({ movieObj, handleAddToWatchList }) {
-  const [iconToggle, setIconToggle] = useState(false);
-
-  function toggleIcon() {
-    setIconToggle(!iconToggle);
+function MovieCard({ movieObj, handleAddToWatchList, watchlist }) {
+  function doesContain(movieObj) {
+    for (let i = 0; i < watchlist.length; i++) {
+      if (watchlist[i].id === movieObj.id) {
+        return true;
+      }
+    }
+    return false;
   }
 
   return (
@@ -21,21 +24,18 @@ function MovieCard({ movieObj, handleAddToWatchList }) {
         backgroundColor: "#f3f3f3",
       }}
     >
-      <div
-        className="absolute top-2 right-2 w-fit justify-center p-3 bg-gray-900/70 rounded-lg cursor-pointer"
-        onClick={() => {
-          toggleIcon();
-          if (!iconToggle) {
-            handleAddToWatchList(movieObj);
-          }
-        }}
-      >
-        <i
-          className={`text-lg ${
-            iconToggle ? "fa-solid text-red-500" : "fa-regular text-white"
-          } fa-heart`}
-        ></i>
-      </div>
+      {doesContain(movieObj) ? (
+        <div className="absolute top-2 right-2 w-fit justify-center p-3 bg-gray-900/70 rounded-lg cursor-pointer">
+          <i className={`text-lg fa-solid text-red-500 fa-heart`}></i>
+        </div>
+      ) : (
+        <div
+          className="absolute top-2 right-2 w-fit justify-center p-3 bg-gray-900/70 rounded-lg cursor-pointer"
+          onClick={() => handleAddToWatchList(movieObj)}
+        >
+          <i className={`text-lg fa-regular text-white fa-heart`}></i>
+        </div>
+      )}
 
       <div className="text-white w-full text-center text-xl p-2 bg-gray-900/70 rounded-lg">
         {movieObj.title}

@@ -3,7 +3,7 @@ import genreids from "../utilities/genre";
 import { MovieContext } from "../context/MovieContext";
 
 function WatchList() {
-  const { watchList } = useContext(MovieContext);
+  const { watchList, handleRemoveFromWatchList } = useContext(MovieContext);
   const [search, setSearch] = useState("");
   const [genreList, setGenreList] = useState([]);
   const [currGenre, setCurrGenre] = useState("All Genres");
@@ -11,8 +11,6 @@ function WatchList() {
   function handleSearch(e) {
     setSearch(e.target.value);
   }
-
-  function removeMovie(movieId) {}
 
   function handleGenre(genre) {
     setCurrGenre(genre);
@@ -104,9 +102,11 @@ function WatchList() {
                         {genreids[movieObj.genre_ids[0]]}
                       </td>
                       <td className="py-3 px-6 text-center">
-                        <button className="bg-red-600 text-white hover:bg-red-700 px-4 py-2 rounded-lg">
-                          {" "}
-                          Delete{" "}
+                        <button
+                          className="bg-red-600 text-white hover:bg-red-700 px-4 py-2 rounded-lg"
+                          onClick={() => handleRemoveFromWatchList(movieObj)}
+                        >
+                          Delete
                         </button>
                       </td>
                     </tr>

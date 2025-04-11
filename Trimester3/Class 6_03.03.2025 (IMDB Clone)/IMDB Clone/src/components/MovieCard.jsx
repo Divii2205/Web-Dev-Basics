@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { MovieContext } from "../context/MovieContext";
 
 function MovieCard({ movieObj }) {
-  const { watchList, handleAddToWatchList } = useContext(MovieContext);
+  const { watchList, handleAddToWatchList, handleRemoveFromWatchList } =
+    useContext(MovieContext);
 
   function doesContain(movieObj) {
     for (let i = 0; i < watchList.length; i++) {
@@ -28,7 +29,10 @@ function MovieCard({ movieObj }) {
       }}
     >
       {doesContain(movieObj) ? (
-        <div className="absolute top-2 right-2 w-fit justify-center p-3 bg-gray-900/70 rounded-lg cursor-pointer">
+        <div
+          className="absolute top-2 right-2 w-fit justify-center p-3 bg-gray-900/70 rounded-lg cursor-pointer"
+          onClick={() => handleRemoveFromWatchList(movieObj)}
+        >
           <i className={`text-lg fa-solid text-red-500 fa-heart`}></i>
         </div>
       ) : (

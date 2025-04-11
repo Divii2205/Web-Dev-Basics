@@ -1,18 +1,55 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import genreids from "../utilities/genre";
+import { MovieContext } from "../context/MovieContext";
 
-function WatchList({ watchlist }) {
+function WatchList() {
+  const { watchList } = useContext(MovieContext);
   const [search, setSearch] = useState("");
+  const [genreList, setGenreList] = useState([]);
+  const [currGenre, setCurrGenre] = useState("All Genres");
 
   function handleSearch(e) {
     setSearch(e.target.value);
   }
 
-  function removeMovie(e){
+  function removeMovie(movieId) {}
+
+  function handleGenre(genre) {
+    setCurrGenre(genre);
+    console.log(genre);
   }
+
+  useEffect(() => {
+    let temp = watchList.map((movieObj) => {
+      return genreids[movieObj.genre_ids[0]];
+    });
+    console.log(temp);
+    const genreSet = new Set(temp);
+
+    console.log(genreSet);
+    setGenreList(["All Genres", ...genreSet]);
+  }, [watchList]);
 
   return (
     <>
+      {/* Genre Based Filtering */}
+      <div className="flex justify-center m-4">
+        {genreList.map((genre) => {
+          return (
+            <div
+              onClick={() => handleGenre(genre)}
+              className={
+                currGenre == genre
+                  ? "mx-4 flex justify-center items-center bg-blue-400 h-[3rem] w-[9rem] text-white font-bold border rounded-xl cursor-pointer"
+                  : "mx-4 flex justify-center items-center bg-gray-400 h-[3rem] w-[9rem] text-white font-bold border rounded-xl cursor-pointer"
+              }
+            >
+              {genre}
+            </div>
+          );
+        })}
+      </div>
+
       {/* Search Field */}
       <div className="flex justify-center my-10 px-6">
         <input
@@ -38,7 +75,14 @@ function WatchList({ watchlist }) {
               </tr>
             </thead>
             <tbody className="text-gray-1000 dark:text-gray-1000 text-sm font-light">
-              {watchlist
+              {watchList
+                .filter((movieObj) => {
+                  if (currGenre == "All Genres") {
+                    return true;
+                  } else {
+                    return currGenre == genreids[movieObj.genre_ids[0]];
+                  }
+                })
                 .filter((movieObj) => {
                   return movieObj.title
                     .toLowerCase()
@@ -56,12 +100,11 @@ function WatchList({ watchlist }) {
                       </td>
                       <td className="py-3 px-6">{movieObj.vote_average}</td>
                       <td className="py-3 px-6">{movieObj.popularity}</td>
-                      <td className="py-3 px-6">{genreids[movieObj.genre_ids[0]]} <br/> {genreids[movieObj.genre_ids[1]]} </td>
+                      <td className="py-3 px-6">
+                        {genreids[movieObj.genre_ids[0]]}
+                      </td>
                       <td className="py-3 px-6 text-center">
-                        <button
-                          className="bg-red-600 text-white hover:bg-red-700 px-4 py-2 rounded-lg"
-                          onClick={removeMovie}
-                        >
+                        <button className="bg-red-600 text-white hover:bg-red-700 px-4 py-2 rounded-lg">
                           {" "}
                           Delete{" "}
                         </button>

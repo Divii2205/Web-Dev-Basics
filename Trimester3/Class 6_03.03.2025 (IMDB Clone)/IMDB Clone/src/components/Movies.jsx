@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import axios from "axios";
 import Pagination from "./Pagination";
 
-function Movies({handleAddtoWatchList, watchlist}) {
+function Movies() {
   const [movies, setMovies] = useState(null);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -42,13 +42,7 @@ function Movies({handleAddtoWatchList, watchlist}) {
         {loading === true ? (
           <div>Loading...</div>
         ) : (
-          movies.map((movieObj) => (
-            <MovieCard
-              movieObj={movieObj}
-              handleAddToWatchList={handleAddtoWatchList}
-              watchlist = {watchlist}
-            />
-          ))
+          movies.map((movieObj) => <MovieCard movieObj={movieObj} />)
         )}
       </div>
       <Pagination pageNext={pageNext} pagePrev={pagePrev} pageNo={page} />
